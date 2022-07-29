@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Hositing</title>
+    </head>
+    <body>
+        <h1>Closure Sample 3 - Two Parent Scope</h1>
+                                                             
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script>
+        function z(){
+            var b = 100; // Declaration and Initalization 
+            function x(){
+                var a= 7; // Declaration and Initalization 
+                function y(){
+                    console.log(a,b); // Reference Return the Value a = 7
+                } 
+                y(); // Function call back
+            }
+            x(); // Function call back 
+        }
+        z();
+       </script>
+    </body>
+</html>

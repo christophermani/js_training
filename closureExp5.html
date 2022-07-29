@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Hositing</title>
+    </head>
+    <body>
+        <h1>Closure Sample 5 - With Currying with Bind</h1>
+                                                             
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script>
+         let multiply = function (a, b){
+               console.log(a * b);            
+         }
+
+         let multiplyByTwo = multiply.bind(this,20);  // Set the Value of a = 20
+         multiplyByTwo(3);  // Set the Value of b = 3
+
+         let multiplyByThree = multiply.bind(this,20,30);  // Set the Value of a = 20 and b = 30
+         multiplyByThree(5);   // This ignore the calling parameter 
+
+         let multiplyByFour = multiply.bind(this,30);  // Set the Value of a = 30
+         multiplyByFour(10);  // Set the Value of b = 10
+
+       </script>
+    </body>
+</html>

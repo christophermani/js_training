@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Hositing</title>
+    </head>
+    <body>
+        <h1>Hositing</h1>
+                                                             
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script>
+        var num = 6;  // Declaration & Initialization
+
+        function checkNum(){
+            console.log('Hoisting Check'); // Print the console message
+        }
+
+        console.log(checkNum); // Return the 'Hositing Check' after the line with initialization is executed
+        console.log(num); // Return 6 after the line with initialization is executed
+        
+
+        console.log(checkVal) // Uncaught ReferenceError: Cannot access 'checkVal' before initialization
+        let checkVal=6;
+
+        name = 'chris';
+        const name; // Uncaught SyntaxError: Missing initializer in const declaration
+
+       </script>
+    </body>
+</html>
