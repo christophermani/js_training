@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Async</title>
+    </head>
+    <body>
+        <h1>Async Sample 1</h1>
+                                                             
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script>
+       
+       console.log('Start');
+       async function hello(){
+        console.log('Inside Function')
+        return 'Check Async Function';
+       }
+       console.log('Before Calling Function');
+       let a = hello()
+       console.log('After Calling Function')
+       console.log(a)
+       console.log('Last Ending')
+       </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Async</title>
+    </head>
+    <body>
+        <h1>Async Sample 2</h1>
+                                                             
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script>
+       
+       console.log('Start');
+       async function hello(){
+        console.log('Inside Function');
+        const dataList = await fetch('http://api.github.com/users'); // Handling Async
+        console.log('Before AWAIT Calling');
+        const users = await dataList.json();
+        return users;
+       }
+       console.log('Before Calling Function');
+       let a = hello()
+       console.log('After Calling Function')
+       console.log(a)
+       a.then(data=>console.log(data))
+       console.log('Last Ending')
+       </script>
+    </body>
+</html>
