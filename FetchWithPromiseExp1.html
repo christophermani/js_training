@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Fetch with Promise</title>
+    </head>
+    <body>
+        <h1>Fetch with Promise Sample 1</h1>
+                                                
+        <table id="showData1"></table>
+        <h2>Filter With Map</h2>
+        <table id="showData2"></table>
+        <h2>Reduce With Map</h2>
+        <table id="showData3"></table>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script> 
+       //fetch('https://reqres.in/api/users')
+       fetch('dummy.json')
+       .then((res)=>{
+            console.log(res)
+            return res.json();
+        })
+        .then((finalRes)=>{
+         // const mydata = finalRes.data; 
+            const mydata = finalRes; 
+            let output = ' ';
+            let output2 = ' ';
+            let output3 = ' ';
+            output ='<tr><td>Name</td><td>Age</td></tr>'
+            output2 ='<tr><td>Name</td><td>Age</td></tr>'
+            output3 ='<tr><td>Name</td><td>Age</td></tr>'
+            mydata.forEach(element => {
+                console.log(element);
+                    output +=`<tr><td>${element.first_name +' ' +element.last_name}</td><td>${element.age}</td></tr>`
+               // output+=`<li>${element.first_name +' ' +element.last_name}</li>`
+             });
+            document.getElementById('showData1').innerHTML = output;
+               //console.log(mydata)
+             const filterMap = mydata.filter(x=>x.age <30)
+             .map((x)=>
+                //x.first_name
+                output2 +=`<tr><td>${x.first_name +' ' +x.last_name}</td><td>${x.age}</td></tr>`
+             )
+             document.getElementById('showData2').innerHTML = output2;
+             
+            console.log(filterMap)
+               const reduceMap = mydata.reduce(function(acc,curr){
+                if(curr.age<50){
+                    acc.push(curr.first_name)
+                    output3 +=`<tr><td>${curr.first_name +' ' +curr.last_name}</td><td>${curr.age}</td></tr>`
+                }
+                return acc;
+               },[]);
+               
+             document.getElementById('showData3').innerHTML = output3;
+            console.log(reduceMap)
+        
+            })
+        .catch((error)=>{
+            console.log(`Error : ${error}`)
+        })
+ 
+       </script>
+    </body>
+</html>

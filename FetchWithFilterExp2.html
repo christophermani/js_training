@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Fetch with Filter</title>
+    </head>
+    <body>
+        <h1>Fetch with Filter, Sorting & Reduce Sample 2</h1>
+                                                
+        <table id="showData"></table>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script> 
+       const resDataNew = fetch('dummyAge.json')
+       .then((res)=>{
+            console.log(res)
+            return res.json();
+        })
+        .then((finalRes)=>{
+         //   const mydata = finalRes.data; 
+               const mydata = finalRes; 
+               console.log(mydata);
+               return mydata;
+        })
+        .catch((error)=>{
+            console.log(`Error : ${error}`)
+        }) 
+
+        console.log('-->> '+resDataNew)
+
+        const dataList = [33,58,22,2,55,88,99,45,12,65,32,88,78,26,26,25,48,58,10,65];
+        let output =' ';
+        const agesName = dataList.filter((age,index)=>age)
+        console.log('Filter : '+agesName)
+        output+= `Filter : ${agesName}<br>`;
+
+        const agesGreaterThan = dataList.filter((age,index)=>age >30)
+        console.log('Filter Greater Than: '+agesGreaterThan)
+        output+=`Filter Greater Than : ${agesGreaterThan}<br>`;
+ 
+        const agesLessThan = dataList.filter((age,index)=>age <30)
+        console.log('Filter Less Than: '+agesLessThan)
+        output+=`Filter Less Than : ${agesLessThan}<br>`;
+
+        const ageSort = dataList.sort((a,b)=> (b-a))
+        console.log('Sorting : '+ ageSort)
+        output+=`Sorting : ${ageSort}<br>`;
+
+        const reduceAge = dataList.reduce((sum,age)=> sum+age, 0)
+        console.log('Reduce Sum Age :'+ reduceAge)
+        output+=`Reduce Sum Age : ${reduceAge}<br>`;
+        const reduceAgeNew = dataList.reduce((acc,curr)=>{
+            acc = acc+curr;
+            return acc;
+        }, 0)
+        console.log('Reduce Sum Age :'+ reduceAgeNew)
+        output+=`Reduce Sum Age : ${reduceAgeNew}<br>`;
+        document.getElementById('showData').innerHTML = output;
+       </script>
+    </body>
+</html>
