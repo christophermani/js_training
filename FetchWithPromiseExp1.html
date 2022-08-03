@@ -36,6 +36,7 @@
              });
             document.getElementById('showData1').innerHTML = output;
                //console.log(mydata)
+/*----------------------------Filter with Map---------------------------------*/
              const filterMap = mydata.filter(x=>x.age <30)
              .map((x)=>
                 //x.first_name
@@ -44,6 +45,9 @@
              document.getElementById('showData2').innerHTML = output2;
              
             console.log(filterMap)
+
+/*----------------------------Reduce with Map---------------------------------*/
+
                const reduceMap = mydata.reduce(function(acc,curr){
                 if(curr.age<50){
                     acc.push(curr.first_name)

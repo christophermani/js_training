@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Higher Order Function</title>
+    </head>
+    <body>
+        <h1>Higher Order Function Sample 2</h1>
+                                                
+        <table id="showData"></table>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script> 
+            const arr = [5,3,1,2,4,6];
+
+            function double(x){
+                return x*2;
+            }
+            const output = arr.map(double);
+            console.log(output)
+
+            const output6 = arr.map((x)=>{return x*2;})
+            console.log(output6)
+
+
+            function triple(x){
+                return x*3;
+            }
+            const output1 = arr.map(triple);
+            console.log(output1)
+
+            const output5 = arr.map((x)=>{return x*3;})
+            console.log(output5)
+
+            function binary(x){
+                return x.toString(2);
+            }
+            const output2 = arr.map(binary);
+            console.log(output2)
+            
+            const output3= arr.map((x)=> x.toString(2));
+            console.log(output3)
+
+            const output4 = arr.map(function binary(x){
+                return x.toString(2)
+            })
+            console.log(output4)
+
+       </script>
+    </body>
+</html>
