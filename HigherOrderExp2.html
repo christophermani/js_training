@@ -10,40 +10,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
        <script> 
-            const arr = [5,3,1,2,4,6];
+            const arr = [5,3,1,2,4,6];  // Array List Declartion 
 
-            function double(x){
+            function double(x){       
                 return x*2;
             }
-            const output = arr.map(double);
-            console.log(output)
+            const output = arr.map(double);    
+            console.log('Map with Function  :  '+output)
 
             const output6 = arr.map((x)=>{return x*2;})
-            console.log(output6)
+            console.log('Map with Arrow Function  :  '+output6)
 
 
             function triple(x){
                 return x*3;
             }
             const output1 = arr.map(triple);
-            console.log(output1)
+            console.log('Map with Function  :  '+output1)
 
             const output5 = arr.map((x)=>{return x*3;})
-            console.log(output5)
+            console.log('Map with Arrow Function  :  '+output5)
 
             function binary(x){
                 return x.toString(2);
             }
             const output2 = arr.map(binary);
-            console.log(output2)
+            console.log('Map with Function  :  '+output2)
             
             const output3= arr.map((x)=> x.toString(2));
-            console.log(output3)
+            console.log('Map with Arrow Function  :  '+output3)
 
             const output4 = arr.map(function binary(x){
                 return x.toString(2)
             })
-            console.log(output4)
+            console.log('Map with Function  :  '+output4)
 
        </script>
     </body>
