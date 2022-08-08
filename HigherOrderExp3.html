@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Higher Order Function</title>
+    </head>
+    <body>
+        <h1>Higher Order Function Sample 1</h1>
+                                                
+        <table id="showData"></table>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script> 
+            const radius = [3,1,2,4];
+
+            const calculateArea = function(radius){
+                const output = [];
+                for(let i=0; i<radius.length; i++){
+                    output.push(Math.PI*radius[i]*radius[i])
+                }
+                return output;
+            }
+            console.log(calculateArea(radius));
+
+            const calculateCircumference = function(radius){
+                const output1 =[];
+                for(let i=0;i<radius.length;i++){
+                    output1.push(2*Math.PI*radius[i])
+                }
+                return output1;
+            }
+            console.log(calculateCircumference(radius))
+
+            console.log('------------with Call Method function----------------')
+
+            const area=function(radius){
+                return Math.PI*radius*radius;
+            }
+
+            radius.map(area)
+            console.log('Radius Map : '+ radius.map(area))
+
+            Array.prototype.calculate = function(logic){
+                const output =[];
+                for(let i=0; i<this.length; i++){
+                    output.push(logic(this[i]))
+                }
+                return output;
+            }
+
+             
+            console.log(radius.calculate,area); 
+            
+
+       </script>
+    </body>
+</html>

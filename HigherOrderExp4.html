@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Higher Order Function</title>
+    </head>
+    <body>
+        <h1>Higher Order Function Sample 2</h1>
+                                                
+        <table id="showData"></table>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script> 
+            const arr = [5,3,1,2,4,6];  // Array List Declartion 
+
+            function isOdd(x){       
+                return x%2;
+            }
+            const output = arr.filter(isOdd);    
+            console.log('Filter to Check Odd Number  :  '+output)
+
+            const output6 = arr.filter((x)=>{return x%2;})
+            console.log('Filter to Check Odd Number - Arrow Function  :  '+output6)
+
+
+            function isEven(x){       
+                return x%2 === 0;
+            }
+            const outputE = arr.filter(isEven);    
+            console.log('Filter to Check Even Number  :  '+outputE)
+
+            const outputE1 = arr.filter((x)=>{return x%2 === 0;})
+            console.log('Filter to Check Even Number - Arrow Function  :  '+outputE1)
+
+
+            function checkGreaterThan(x){       
+                return x>4;
+            }
+            const output2 = arr.filter(checkGreaterThan);    
+            console.log('Filter to Check Greater than  Number  :  '+output2)
+
+            const output3 = arr.filter((x)=>{return x > 4;})
+            console.log('Filter to Check  Greater than Number - Arrow Function  :  '+output3)
+
+
+      
+
+       </script>
+    </body>
+</html>

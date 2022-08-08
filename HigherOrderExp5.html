@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Higher Order Function</title>
+    </head>
+    <body>
+        <h1>Higher Order Function Sample 5 - Reduce</h1>
+                                                
+        <table id="showData"></table>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+       <script> 
+            const arr = [5,3,1,2,4,6];  // Array List Declartion 
+
+            function findSum(arr){       
+                let sum = 0;
+                for(i=0;i<arr.length;i++){
+                    sum=sum+arr[i];
+                }
+                return sum;
+            } 
+            console.log('Total Sum : '+findSum(arr))
+ 
+
+            const output = arr.reduce(function(acc,curr){
+                acc=acc+curr;
+                return acc;
+            },0);
+            console.log('Total SUM with Reduce : '+output)
+
+            function findMax(arr){
+                let max=0;
+                for(i=0;i<arr.length;i++){
+                   if(arr[i]>max){ max=arr[i];}
+                }
+                return max;
+            }
+            
+            console.log('Max Number : '+findMax(arr))
+
+            const output1 = arr.reduce(function(max,curr){
+                if(curr>max){
+                    max=curr;
+                }
+                return max;
+            },0)
+            console.log('Max Number with Reduce : '+output1)
+
+      
+
+       </script>
+    </body>
+</html>
